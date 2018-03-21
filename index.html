@@ -1,0 +1,36 @@
+<html>
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script src="GameController.js"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body ng-app="game">
+    <div ng-controller="GameController">
+        
+        <div ng-hide="startButtons">
+            <input type="button" value="O" ng-model="playerType" ng-click="startWithO()"/>
+            <input type="button" value="X" ng-model="playerType" ng-click="startWithX()"/>
+        </div>
+
+        <div ng-hide="winner">
+            <h2>{{playerType}} Turn</h2>
+        </div>
+
+        <div ng-show="winner">
+           <h2>{{winner}} won the game!! </h2> <br/>
+            <input type="button" ng-click="startOver()" value="Start Over"/>
+        </div>
+
+        <div ng-hide="winner">
+            <table border="1" class="cellTable">
+                <tr ng-repeat="row in tableLength">
+                    <td ng-repeat="column in tableLength" ng-click="clickCell(row,column)" class="cell">
+                        {{showData(row, column)}}</td>
+                </tr>
+            </table>
+        </div>    
+    </div>
+</body>
+
+
+</html>

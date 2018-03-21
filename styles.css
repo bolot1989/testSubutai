@@ -1,0 +1,10 @@
+.cellTable {
+    width: 90px;
+    height: 90px;
+    font: 50px sans-serif;
+    text-align: center;
+}
+
+.cell {
+    padding: 70px
+}
